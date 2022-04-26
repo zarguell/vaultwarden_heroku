@@ -1,9 +1,12 @@
 name: VaultwardenOnHeroku_Update
 
 on:
+  pull_request:
   push:
     branches: [ main ]
   workflow_dispatch:
+  schedule:
+    - cron: "10 2 * * 0"
 
 env:
   AUTOBUS_ENABLE: 1
